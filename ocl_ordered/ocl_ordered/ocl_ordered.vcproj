@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="C:\Program Files\AMD APP\include"
+				AdditionalIncludeDirectories="&quot;C:\Program Files\AMD APP\include&quot;;..\..\..\omp_to_ocl"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
