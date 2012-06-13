@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ocl_sections", "ocl_sections\ocl_sections.vcproj", "{1A603C2A-516B-4204-A610-A4689052C073}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A603C2A-516B-4204-A610-A4689052C073}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1A603C2A-516B-4204-A610-A4689052C073}.Debug|Win32.Build.0 = Debug|Win32
+		{1A603C2A-516B-4204-A610-A4689052C073}.Release|Win32.ActiveCfg = Release|Win32
+		{1A603C2A-516B-4204-A610-A4689052C073}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
