@@ -9,7 +9,7 @@
 int _tmain(int argc, _TCHAR* argv[])
 {
 	o2o_init();
-	o2o_create_cmd_queue(CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE);
+	o2o_create_cmd_queue();
 
     o2o_open_and_build("single.cl", "single");
 
