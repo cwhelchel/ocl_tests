@@ -6,6 +6,7 @@ __kernel void single()
     
     if (id == 0)
         printf("single execution\n");
+    barrier(CLK_GLOBAL_MEM_FENCE);
     
     printf("multiple\n");
 } 
