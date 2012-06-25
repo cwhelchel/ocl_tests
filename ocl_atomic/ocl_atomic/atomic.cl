@@ -28,6 +28,7 @@ __kernel void atomic_read(__global int* p)
   --x;
   x binop= expr;
   x = x binop expr;
+  binop is one of  +, *, -, /, &, ^, |, <<, or >>.
 */
 __kernel void atomic_update(__global int* p)
 {
@@ -37,9 +38,12 @@ __kernel void atomic_update(__global int* p)
 	atomic_inc(p); // x++ or ++x
 	atomic_dec(p); // x-- or --x
 
-	// here binop is restricted to + or -
+	// here binop is restricted to +, -, &, |, ^
 	atomic_add(p, expr);
 	atomic_sub(p, expr);
+	atomic_and(p, expr);
+	atomic_or(p, expr);
+	atomic_xor(p, expr);
 }
 
 /*  
@@ -70,5 +74,14 @@ __kernel void atomic_capture(__global int* p)
 	v = *p;
 
 	atomic_sub(p, expr);
+	v = *p;
+
+	atomic_and(p, expr);
+	v = *p;
+
+	atomic_or(p, expr);
+	v = *p;
+
+	atomic_xor(p, expr);
 	v = *p;
 }
