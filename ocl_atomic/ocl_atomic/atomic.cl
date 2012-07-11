@@ -85,3 +85,17 @@ __kernel void atomic_capture(__global int* p)
 	atomic_xor(p, expr);
 	v = *p;
 }
+
+/*  
+  #pragma omp atomic update
+  x <<= 1;
+*/
+__kernel void atomic_lshift(__global int* p)
+{
+	// we can shift by multiplying by powers of 2
+	// x = x * pow(2,1) == x << 1
+	
+	int val = *p;
+	val = val * 2;
+	atomic_add(p, val);
+}

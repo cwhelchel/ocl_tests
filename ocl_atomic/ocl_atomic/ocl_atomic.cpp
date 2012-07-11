@@ -7,18 +7,22 @@
 int _tmain(int argc, _TCHAR* argv[])
 {
     cl_mem p_buff = NULL;
-    int p = 0;
+    int p = 2;
 
 	o2o_init();
 	o2o_create_cmd_queue();
 	
 	p_buff = o2o_create_buffer(CL_MEM_READ_WRITE, sizeof(int));
 
-    o2o_open_and_build("atomic.cl", "atomic_write");
+    o2o_open_and_build("atomic.cl", "atomic_lshift");
 
 	o2o_set_kernel_arg(0, sizeof(cl_mem), &p_buff); 
 
-	o2o_execute_kernel(64);
+    printf("%d", p);
+
+    o2o_write_buffer(p_buff, sizeof(int), &p);
+
+	o2o_execute_kernel(1);
 
 	o2o_read_buffer(p_buff, sizeof(int), &p);
 
